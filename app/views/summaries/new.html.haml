@@ -33,7 +33,7 @@
       = f.hidden_field :assignment_id
       .form-group
         = f.label :content, "Write your 50-140 character summary in the text box below."
-        = f.text_area :content, class: 'form-control', id: textID
+        = f.text_area :content, class: 'form-control', id: textID, disabled: @unaccepted
         .character-count
           Characters:
           %span{id: countID}=0
