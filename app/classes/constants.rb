@@ -44,4 +44,5 @@ class Constants < Enumeration
 
   self.add_item(:CONTACT_EMAIL, "sauvik@cmu.edu")
   self.add_item(:ROOT_URL, "https://experiment.sauvik.me/")
+  self.add_item(:TURK_SANDBOX_ENABLED, true)
 end

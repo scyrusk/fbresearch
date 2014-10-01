@@ -54,36 +54,6 @@ class Utility
     end
   end
 
-  # def self.create_authors
-  #   Author.create_author "Sauvik Das", "https://facebook.com/sauvikdas", ""
-  #   Author.create_author "Moira Burke", "https://facebook.com/mburke", ""
-  #   Author.create_author "Adam Kramer", "", ""
-  #   Author.create_author "Robert Kraut", "", ""
-  #   Author.create_author "Eric Sun", "", ""
-  #   Author.create_author "Itamar Rosenn", "", ""
-  #   Author.create_author "Cameron Marlow", "", ""
-  #   Author.create_author "Thomas Lento", "", ""
-  #   Author.create_author "Jonathan Chang", "", ""
-  #   Author.create_author "Lars Backstrom", "", ""
-  #   Author.create_author "Eytan Bakshy", "", ""
-  #   Author.create_author "Jon Kleinberg", "", ""
-  #   Author.create_author "Johan Ugander", "", ""
-  #   Author.create_author "Rong Yan", "", ""
-  #   Author.create_author "Paolo Boldi", "", ""
-  #   Author.create_author "Sebastiano Vigna", "", ""
-  #   Author.create_author "Robert Bond", "", ""
-  #   Author.create_author "Chris Fariss", "", ""
-  #   Author.create_author "Jason Jones", "", ""
-  #   Author.create_author "Cameron Marlow", "", ""
-  #   Author.create_author "Jaime Settle", "", ""
-  #   Author.create_author "James Fowler", "", ""
-  #   Author.create_author "Shaomei Wu", "", ""
-  #   Author.create_author "Atish Das Sarma", "", ""
-  #   Author.create_author "Alex Fabrikant", "", ""
-  #   Author.create_author "Andrew Tomkins", "", ""
-  #   Author.create_author "Silvio Lattanzi", "", ""
-  # end
-
   # def self.create_publications
   #   Publication.create_publication(
   #     "Self-Censorship on Facebook",
