@@ -3,11 +3,26 @@
     .title
       = link_to pub.title, pub.link
     %hr
-    %p
-      - if pub.summary.present? && pub.summary.length > 0
-        = pub.summary
-      - else
-        = (pub.abstract.length > 140 ? "#{pub.abstract[0...140]}..." : pub.abstract)
+    - if pub.summaries.length == 1
+      %p.turk-summary
+        %i Summary:
+        = pub.summaries.first.content
+    - elsif pub.summaries.length > 1
+      - ids = pub.summaries.map do |pub| Utility.gen_random_word end
+      - nxtButtonID = Utility.gen_random_word
+      %p
+        - pub.summaries.each.each_with_index do |pub, i|
+          %span.turk-summary{id: ids[i], style: 'display: none;'}
+            %i Summary:
+            = pub.content
+      %p.btn-link{id: nxtButtonID} Next Summary
+      :javascript
+        window.shifter = new SummaryShifter(
+          "#{nxtButtonID}",
+          "#{ids.join(",")}".split(",")
+        );
+    - else
+      %p= (pub.abstract.length > 140 ? "#{pub.abstract[0...140]}..." : pub.abstract)
   .col-md-6
     - pauthors = pub.ordered_authors
     - (0...pauthors.length).step(4) do |n|

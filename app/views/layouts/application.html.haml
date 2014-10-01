@@ -7,10 +7,38 @@
     = javascript_include_tag    '//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js', charset: 'utf-8'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-55366102-1', 'auto');
+      ga('send', 'pageview');
+
   %body
     #header
       #brand
-        Research Summaries
+        Short Facebook Research Summaries
+        %span#click-signal.glyphicon.glyphicon-chevron-down
+      #info
+        %p
+          %strong What?
+          Tweet-length summaries of Facebook's human-centered academic research. Publications scraped from the HCI, Data Science and Social Computing areas on
+          = link_to "this page.", "https://facebook.com/publications"
+        %p
+          Workers on Mechanical Turk were asked to summarize the key results of a paper, given its title and abstract, in 50-140 characters. For publications where this data is available, these summaries are provided instead of the paper abstract.
+        %p
+          %strong Why?
+          For a class midterm project. Also, because Facebook does a lot of human-centered research that can be difficult for lay people to parse because of academic jargon. I thought it might be fun to try and get short, tweet-length summaries of Facebook's published academic, human-centered papers.
+        %p
+          %strong Who?
+          = link_to "I", "http://sauvik.me"
+          am a Ph.D. student of the
+          = link_to "HCII", "http://hcii.cmu.edu"
+          at
+          = link_to "Carnegie Mellon University", "http://cmu.edu"
+          \. I have previously interned for and published with Facebook.
     #viz
       = yield
     #footer

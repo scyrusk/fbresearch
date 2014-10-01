@@ -2,6 +2,40 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+class @InfoHandler
+  constructor: ->
+    @targetEl = $("#header")
+    @infoEl = $("#info")
+    @clickSignal = $("#click-signal")
+    @shown = false
+
+    @targetEl.bind 'click', () =>
+      if @shown
+        @infoEl.slideUp()
+        @shown = false
+        @clickSignal.removeClass "glyphicon-chevron-up"
+        @clickSignal.addClass "glyphicon-chevron-down"
+      else
+        @infoEl.slideDown()
+        @shown = true
+        @clickSignal.removeClass "glyphicon-chevron-down"
+        @clickSignal.addClass "glyphicon-chevron-up"
+
+class @SummaryShifter
+  constructor: (nextButtonId, elementIDs) ->
+    @nextButton = $("##{nextButtonId}")
+    @elements = []
+    for elementID in elementIDs
+      @elements.push $("##{elementID}")
+    @currIndex = 0
+    @elements[@currIndex].fadeIn();
+
+    @nextButton.bind 'click', () =>
+      curr = @elements[@currIndex]
+      @currIndex = (@currIndex + 1) % @elements.length
+      curr.fadeOut 300, () =>
+        @elements[@currIndex].fadeIn()
+
 class _Viz
   CANVAS_WIDTH: 800
   CANVAS_CENTER_X: 400
