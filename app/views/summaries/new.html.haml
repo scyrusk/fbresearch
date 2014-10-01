@@ -4,13 +4,14 @@
       %p
         Write a summary between 50 and 140 characters for the following research paper.
         You should focus on the
-        %strong
+        %i
           key results
         of the work.
       %p
         This summary will eventually be judged, and
-        %strong
+        %i
           you may earn a bonus if your summary scores highly.
+%hr
 
 .row
   .col-md-8
@@ -51,6 +52,7 @@
     = form_tag(@submit_to, method: :post, id: 'payment-form', target: 'get_paid_iframe') do |f|
       = hidden_field_tag :assignmentId, @assignment_id
       = hidden_field_tag :complete, true
+      = hidden_field_tag :content, "", id: 'submit-content'
       %button#turkPayment.btn.btn-primary
         Get Paid. Do not open in new tab.
   %iframe{name: "get_paid_iframe", style: "display:none; height:0px; width:0px;"}

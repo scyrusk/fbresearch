@@ -18,5 +18,7 @@ class TurkInterface
       hit.reward = 0.01
       hit.qualifications.add :country, { eql: 'US' }
     end
+
+    p hit.url
   end
 end

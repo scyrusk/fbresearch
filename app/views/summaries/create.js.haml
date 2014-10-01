@@ -4,4 +4,5 @@
 - else
   var getPaid = function(event) { if (event) { event.preventDefault(); } $("#payment-form").submit(); };
   $("#turkPayment").click(getPaid);
+  $("#submit-content").val("#{@summary.content}");
   $("#summary-form").fadeOut(600, function() { $("#hidden").fadeIn(); });
