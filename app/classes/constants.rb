@@ -48,4 +48,7 @@ class Constants < Enumeration
 
   self.add_item(:AWS_ACCESS_KEY, ENV['S3_KEY'])
   self.add_item(:AWS_SECRET_KEY, ENV['S3_SECRET'])
+
+  self.add_item(:REQUIRED_SUMMARIES, 3)
+  self.add_item(:SUMMARY_PAYMENTS, 0.10)
 end

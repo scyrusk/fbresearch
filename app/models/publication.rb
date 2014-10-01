@@ -17,6 +17,7 @@
 class Publication < ActiveRecord::Base
   has_many :author_publication_links
   has_many :authors, through: :author_publication_links
+  has_many :summaries
   validates_presence_of :title, :year
 
   def ordered_authors
