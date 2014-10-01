@@ -45,4 +45,7 @@ class Constants < Enumeration
   self.add_item(:CONTACT_EMAIL, "sauvik@cmu.edu")
   self.add_item(:ROOT_URL, "https://experiment.sauvik.me/")
   self.add_item(:TURK_SANDBOX_ENABLED, true)
+
+  self.add_item(:AWS_ACCESS_KEY, ENV['S3_KEY'])
+  self.add_item(:AWS_SECRET_KEY, ENV['S3_SECRET'])
 end

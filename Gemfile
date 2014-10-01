@@ -48,3 +48,4 @@ gem 'carrierwave'
 gem 'nokogiri'
 
 gem 'koala'
+gem 'rturk'

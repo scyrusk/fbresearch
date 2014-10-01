@@ -1,4 +1,6 @@
 class SummariesController < ApplicationController
+  before_action :allow_iframe
+
   def new
     pid = params[:publication_id]
     if pid.nil?
@@ -42,5 +44,9 @@ class SummariesController < ApplicationController
         :hit_id,
         :assignment_id
       )
+    end
+
+    def allow_iframe
+      response.headers.except! 'X-Frame-Options'
     end
 end
