@@ -1,0 +1,25 @@
+.row.pub-row
+  .col-md-5
+    .title
+      = link_to pub.title, pub.link
+    %hr
+    %p
+      - if pub.summary.present? && pub.summary.length > 0
+        = pub.summary
+      - else
+        = (pub.abstract.length > 140 ? "#{pub.abstract[0...140]}..." : pub.abstract)
+  .col-md-6
+    - pauthors = pub.ordered_authors
+    - (0...pauthors.length).step(4) do |n|
+      .author-block
+        - pauthors[n..(n+3)].each do |author|
+          .author
+            .author-img
+              - if author.image.present?
+                = image_tag author.image.url, size: "20x20"
+            .author-name
+              - if author.fb_profile.present?
+                = link_to author.name, author.fb_profile
+              - else
+                = author.name
+  .col-md-1

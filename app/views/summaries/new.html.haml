@@ -1,0 +1,59 @@
+.row
+  .col-md-8
+    .instructions
+      %p
+        Write a summary between 50 and 140 characters for the following research paper.
+        You should focus on the
+        %strong
+          key results
+        of the work.
+      %p
+        This summary will eventually be judged, and
+        %strong
+          you may earn a bonus if your summary scores highly.
+
+.row
+  .col-md-8
+    .summary
+      .summary-title=@summary.publication.title
+      .summary-abstract=@summary.publication.abstract
+
+.row
+  .col-md-8#errors
+.row.summary-form#summary-form
+  - textID = Utility.gen_random_word
+  - submitID = Utility.gen_random_word
+  - countID = Utility.gen_random_word
+  .col-md-8
+    = form_for(@summary, remote: :true) do |f|
+      = f.hidden_field :publication_id
+      = f.hidden_field :worker_id
+      = f.hidden_field :hit_id
+      = f.hidden_field :assignment_id
+      .form-group
+        = f.label :content, "Write your 50-140 character summary in the text box below."
+        = f.text_area :content, class: 'form-control', id: textID
+        .character-count
+          Characters:
+          %span{id: countID}=0
+      .form-group
+        = f.submit "Submit Summary", class: 'btn btn-primary', disabled: true, id: submitID
+
+- if @unaccepted
+  #acceptHIT
+    %p.accept-hit-text Accept this HIT to continue.
+- else
+  #hidden
+    %p
+      Thank you! To get paid, simply click the following button labeled "Get Paid".
+      %strong Do NOT open in a new tab. Just click the button.
+    - formID = Utility.gen_random_word
+    = form_tag(@submit_to, method: :post, id: 'payment-form', target: 'get_paid_iframe') do |f|
+      = hidden_field_tag :assignmentId, @assignment_id
+      = hidden_field_tag :complete, true
+      %button#turkPayment.btn.btn-primary
+        Get Paid. Do not open in new tab.
+  %iframe{name: "get_paid_iframe", style: "display:none; height:0px; width:0px;"}
+
+  :javascript
+    var watcher = new SummaryWatcher($("##{textID}"), $("##{submitID}"), $("##{countID}"));

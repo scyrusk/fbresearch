@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ */
+
+@import "bootstrap";
+@import "*";
+
+body {
+  font-family: Josefin Slab, serif;
+  font-size: 18px;
+}
+
+#header {
+  border-top-style: none;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 5px;
+  padding-left: 100px;
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#brand {
+  font-size: 48px;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  border-bottom-style: none;
+  border-top: 1px solid #e7e7e7;
+  padding: 5px;
+  padding-left: 100px;
+  width: 100%;
+  height: 40px;
+  background-color: #f8f8f8;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#viz {
+  width: 100%;
+  padding-bottom: 45px;
+  z-index: 0;
+}
+
+.svg-viz {
+  display: block;
+  margin: auto;
+}
+
+.author-img {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  vertical-align: middle;
+}
+
+.author-name {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle;
+  height: 20px;
+}
+
+.author {
+  vertical-align: middle;
+}
+
+.author-block {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.year-pub {
+  width: 100%;
+  padding: 10px 100px;
+}
+
+.year-p {
+  font-size: 28px;
+  text-align: center;
+  color: white;
+}
+
+#hidden {
+  display: none;
+}

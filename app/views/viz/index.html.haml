@@ -1,0 +1,8 @@
+- year = @publications.keys.sort
+- year.each do |year|
+  .year-pub
+    %p.year-p=year
+    = render partial: "publications/hovercard", collection: @publications[year], as: :pub
+
+:javascript
+  Viz.backgroundColors();

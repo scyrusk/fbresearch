@@ -1,0 +1,19 @@
+#hidden
+  %p
+    Thank you! To get paid, simply click the following button labeled "Get Paid".
+    %strong Do NOT open in a new tab. Just click the button.
+  - formID = Utility.gen_random_word
+  = form_tag(@submit_to, method: :post, id: formID, target: 'get_paid_iframe') do |f|
+    = hidden_field_tag :assignmentId, @assignment_id
+    = hidden_field_tag :complete, true
+    %button#turkPayment
+      Get Paid
+
+:javascript
+  var getPaid = function(event) {
+    if (event) {
+      event.preventDefault();
+    }
+    $("##{formID}").submit();
+  }
+  $("#turkPayment").click(getPaid);

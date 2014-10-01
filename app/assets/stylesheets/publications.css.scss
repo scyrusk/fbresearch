@@ -1,0 +1,28 @@
+// Place all the styles related to the Publications controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hovercard {
+  font-size: 12px;
+  width: 300px;
+  border: 1px solid rgba(125, 125, 125, 0.5);
+  margin: 5px;
+  height: 100px;
+  overflow: hidden;
+}
+
+hr {
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+.pub-row {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.75);
+  margin: 10px 0px;
+}
+
+#hidden {
+  display: none;
+  padding: 15px 100px;
+}

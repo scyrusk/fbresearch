@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @publication.title
+%p
+  %b Venue:
+  = @publication.venue
+%p
+  %b Summary:
+  = @publication.summary
+%p
+  %b Year:
+  = @publication.year
+
+= link_to 'Edit', edit_publication_path(@publication)
+\|
+= link_to 'Back', publications_path

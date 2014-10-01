@@ -1,0 +1,7 @@
+- if @errors.present?
+  - @errors.each do |error, msg|
+    $("#errors").html("<p class='alert alert-danger'>#{msg}</p>");
+- else
+  var getPaid = function(event) { if (event) { event.preventDefault(); } $("#payment-form").submit(); };
+  $("#turkPayment").click(getPaid);
+  $("#summary-form").fadeOut(600, function() { $("#hidden").fadeIn(); });

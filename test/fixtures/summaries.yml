@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: summaries
+#
+#  id             :integer          not null, primary key
+#  publication_id :integer
+#  content        :text
+#  worker_id      :string(255)
+#  hit_id         :string(255)
+#  assignment_id  :string(255)
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  publication_id: 1
+  votes: 1
+  content: MyText
+
+two:
+  publication_id: 1
+  votes: 1
+  content: MyText
