@@ -31,7 +31,6 @@ class TurkInterface
         )
         hit.reward = Constants::SUMMARY_PAYMENTS
         hit.qualifications.add :country, { eql: 'US' }
-        hit.qualifications.add :approval_rate, { :gt => 95 }
       end
 
       hit.url
